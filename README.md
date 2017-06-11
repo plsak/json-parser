@@ -1,2 +1,2 @@
 # utils
-Utilities convenient for linux administration
+Utilities convenient for sysadmins

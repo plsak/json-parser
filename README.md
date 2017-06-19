@@ -1,20 +1,16 @@
-PURPOSE:
---------------------------------------------------------------------------------
+## PURPOSE:
 Simple and quick Python Utility to parse and print JSON data from FILE, URL or STDIN
 
-USAGE:
---------------------------------------------------------------------------------
+## USAGE:
 ```
 $ json-parser.py -h
 [json-parser, v0.13] /home/plsak/bin/json-parser.py [-h|-v] <-f FILE|-u URL|-s (read STDIN)> [KEY1] [KEY2] ...
 ```
 
-OPTIONS:
---------------------------------------------------------------------------------
-
+## OPTIONS:
 ```
-	-h			Print Help
-	-v			Verbose mode
+	-h		Print Help
+	-v		Verbose mode
 
 	-f FILE		Use FILE as source of JSON data
 	-u URL		Use URL as source of JSON data
@@ -23,9 +19,7 @@ OPTIONS:
 	KEYX		Don't print whole JSON doc but only content of KEY1->KEY2->KEY3->... (going into unlimited depth)
 ```
 
-EXAMPLES:
---------------------------------------------------------------------------------
-
+## EXAMPLES:
 ```
 $ cat example-chef-node.json
 {
@@ -45,9 +39,7 @@ $ cat example-chef-node.json
 }
 ```
 
-----------------------------------------
-FILE:
-----------------------------------------
+### *FILE:*
 ```
 $ json-parser.py -f example-chef-node.json
 {
@@ -64,13 +56,11 @@ $ json-parser.py -f example-chef-node.json
 }
 ```
 
---------------------
 ```
 $ json-parser.py -f example-chef-node.json name
 "example-node.com"
 ```
 
---------------------
 ```
 $ json-parser.py -f example-chef-node.json run_list
 [
@@ -79,15 +69,13 @@ $ json-parser.py -f example-chef-node.json run_list
     "recipe[pd-example-role]"
 ]
 ```
---------------------
+
 ```
 $ json-parser.py -f example-chef-node.json run_list 0
 "role[linux_client]"
 ```
 
-----------------------------------------
-URL:
-----------------------------------------
+### *URL:*
 ```
 $ json-parser.py -u http://localhost/example-chef-node.json
 {
@@ -104,13 +92,11 @@ $ json-parser.py -u http://localhost/example-chef-node.json
 }
 ```
 
---------------------
 ```
 $ json-parser.py -u http://localhost/example-chef-node.json name
 "example-node.com"
 ```
 
---------------------
 ```
 $ json-parser.py -u http://localhost/example-chef-node.json run_list
 [
@@ -120,15 +106,12 @@ $ json-parser.py -u http://localhost/example-chef-node.json run_list
 ]
 ```
 
---------------------
 ```
 $ json-parser.py -u http://localhost/example-chef-node.json run_list 1
 "recipe[pd-chef-vault]"
 ```
 
-----------------------------------------
-STDIN:
-----------------------------------------
+### *STDIN:*
 ```
 $ cat example-chef-node.json | json-parser.py -s
 {
@@ -145,13 +128,11 @@ $ cat example-chef-node.json | json-parser.py -s
 }
 ```
 
---------------------
 ```
 $ cat example-chef-node.json | json-parser.py -s chef_environment
 "eu-prod-env"
 ```
 
---------------------
 ```
 $ cat example-chef-node.json | json-parser.py -s run_list
 [
@@ -161,7 +142,6 @@ $ cat example-chef-node.json | json-parser.py -s run_list
 ]
 ```
 
---------------------
 ```
 $ cat example-chef-node.json | json-parser.py -s run_list 2
 "recipe[pd-example-role]"

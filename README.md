@@ -1,3 +1,6 @@
+#### *NOTE:*
+`Coded and tested on Python 2.7 and 2.6` (Ubuntu 16.04, macOS Sierra 10.12.5, Centos 6.X) and syntax `will need fix for Python 3.x` - will do later.
+
 ## PURPOSE:
 Simple and quick Python Utility to parse and print JSON data from FILE, URL or STDIN
 
